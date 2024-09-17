@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO Detection</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="content">
+        <h1>YOLO Object Detection</h1>
+        <p>Use the buttons below to control the object detection process.</p>
+
+        <div>
+            <img id="video-feed" src="{% url 'video_feed' %}" alt="Video feed will appear here">
+        </div>
+
+        <div class="button-container">
+            <form method="get" action="{% url 'start_detection' %}">
+                <button type="submit" class="start-button">Start Detection</button>
+            </form>
+
+            <form method="get" action="{% url 'stop_detection' %}">
+                <button type="submit" class="stop-button">Stop Detection</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
